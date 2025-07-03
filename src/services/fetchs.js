@@ -1,14 +1,11 @@
 const apiUrl = "https://playground.4geeks.com/todo";
 
-
-
-
 export const GetTareas = async (myUsuario) => {
   try {
     const response = await fetch(`${apiUrl}/users/${myUsuario}`);
     if (!response.ok) throw new Error("Error al obtener las tareas");
     const data = await response.json();
-    
+
     return data.todos;
   } catch (error) {
     console.error("Error:", error);
@@ -17,12 +14,13 @@ export const GetTareas = async (myUsuario) => {
 
 export const CrearUsuario = async (myUsuario) => {
   try {
-    const response = await fetch(`${apiUrl}/users/${myUsuario}`,{
-      method: "POST",headers: { "Content-Type": "application/json" }});
+    const response = await fetch(`${apiUrl}/users/${myUsuario}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
     if (!response.ok) throw new Error("Error al crear el usuario");
-    
-    
-    return alert(`Usuario "${userName}" creado exitosamente`);
+
+    return alert(`Usuario creado exitosamente`);
   } catch (error) {
     console.error("Error:", error);
     alert("El usuario ya existe");
@@ -35,8 +33,7 @@ export const fetchUsuarios = async () => {
     if (!response.ok) throw new Error("Error al obtener la lista de usuarios");
 
     const data = await response.json();
-    
-    console.log(data.users)
+
     return Array.isArray(data.users) ? data.users : [];
   } catch (error) {
     console.error("Error en fetchUsuarios:", error);
@@ -68,7 +65,6 @@ export const CrearTarea = async (tarea, myUsuario) => {
     if (!response.ok) throw new Error("Error al crear la tarea");
     else return alert(`Tarea creada exitosamente`);
   } catch (error) {
-   
     alert("Error al crear la tarea");
   }
 };
@@ -86,4 +82,3 @@ export const EliminarTarea = async (id) => {
     alert("Error al eliminar la tarea");
   }
 };
-

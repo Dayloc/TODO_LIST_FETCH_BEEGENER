@@ -1,11 +1,33 @@
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+body {
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(111, 111, 111));
+}
+.container {
+  color: gold;
+  height: 900px;
+}
+.reflejo {
+  transform: scaleY(-1);
+  opacity: 0.4;
+  filter: blur(2px);
+  margin-top: -20px;
+  pointer-events: none; /* para que el reflejo no sea clickeable */
+}
+.delete {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  transform: scaleY(-1);
+  opacity: 0.6;
+  filter: blur(2px);
+  margin-top: -20px;
+  pointer-events: none; /* para que el reflejo no sea clickeable */
+}
+.eliminar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sombra {
+  box-shadow: -8px 0 12px 5px rgba(236, 236, 236, 0.26);
+}
